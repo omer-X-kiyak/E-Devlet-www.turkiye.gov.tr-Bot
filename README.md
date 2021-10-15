@@ -11,4 +11,4 @@ DİL TÜRKÇE
 python3 indiriniz
 Selenium indiriniz (pip install selenium)  (https://selenium-python.readthedocs.io/)
 Pc'deki yüklü chrome,microsof edge vs version bilgisi'ne uygun chromium indiriniz https://chromedriver.chromium.org/downloads
-Botta 9.satıra T.C Kimlik No yazınız ve 11.satıra şifrenizi yazınız ÖRNEK:   .send_keys("12345678901")
+Botta 9.satıra T.C Kimlik No yazınız ve 11.satıra şifrenizi yazınız ÖRNEK:   .send_keys("12345678901") ,.send_keys("abc123")
