@@ -49,11 +49,6 @@ time.sleep(2)
 
 any("self")
 browser.get("https://www.turkiye.gov.tr/4a-hizmet-dokumu") 
-can = browser.find_element_by_xpath("/html/body/main/div/section/section[2]/div[1]/dl/dd[9]/strong").text
-print(can)
-
-
-
 
 time.sleep(10)
 
