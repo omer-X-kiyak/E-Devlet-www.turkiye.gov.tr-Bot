@@ -51,41 +51,76 @@ time.sleep(2)
 any("self")
 sgk = browser.get("https://www.turkiye.gov.tr/4a-hizmet-dokumu") 
 time.sleep(3)
-sgk0 =browser.find_element(By.CLASS_NAME, 'compact').text
-time.sleep(10)
+try:
 
+    sgk0 =browser.find_element(By.CLASS_NAME, 'compact').text
+    time.sleep(10)
+except:
+    print("Bulamadık :(")
 
 ###                   ARAMA    davalarim
 davalarim = browser.get("https://www.turkiye.gov.tr/davalarim")
 time.sleep(3)
-davalarim0 = browser.find_element(By.CLASS_NAME, 'resultContainer').text
-time.sleep(10)
+try:
+
+    davalarim0 = browser.find_element(By.CLASS_NAME, 'resultContainer').text
+    time.sleep(10)
+except:
+    print("Bulamadık :(")
+
 ###                   ARAMA    yargitay dava
 browser.get("https://www.turkiye.gov.tr/yargitay-dava-sureci-sorgulama")
 time.sleep(10)
 
+
 ###                   ARAMA    sgk
 sgko = browser.get("https://www.turkiye.gov.tr/sgk-tescil-ve-hizmet-dokumu")
 time.sleep(3)
-sgko0 =browser.find_element(By.ID, 'table_001').text
-time.sleep(10)
+try:
+    sgko0 =browser.find_element(By.ID, 'table_001').text
+    time.sleep(10)
+except:
+    print("Bulamadık :(")
 
 ###                   ARAMA    BTK
 BTK = browser.get("https://www.turkiye.gov.tr/mobil-hat-sorgulama")
 time.sleep(3)
-BTK0 = browser.find_element(By.CLASS_NAME, 'ed-partial-wrapper').text
+try:
+    BTK0 = browser.find_element(By.CLASS_NAME, 'ed-partial-wrapper').text
+except:
+    print("Bulamadık :(")
+
 time.sleep(10)
 
 ###                   ARAMA    TVKGS
 tvkgs = browser.get("https://www.turkiye.gov.tr/tapu-bilgileri-sorgulama")
 time.sleep(3)
-tvkgs0 = browser.find_element(By.CLASS_NAME, 'resultContainer').text
+try:
+    tvkgs0 = browser.find_element(By.CLASS_NAME, 'resultContainer').text
+except:
+    print("Bulamadık :(")
+
 time.sleep(10)
 
 ###                   ARAMA    gib
 gib = browser.get("    https://ivd.gib.gov.tr/index_edevlet.jsp?gn=")
 time.sleep(20)
-gib0 = browser.find_element(By.CLASS_NAME, 'csc-ver-container').text
+try:
+
+    gib0 = browser.find_element(By.CLASS_NAME, 'csc-ver-container').text
+except:
+    print("Bulamadık :(")
 time.sleep(10)
 print(sgk0,'\n', davalarim0,'\n', sgko0,'\n', BTK0,'\n', tvkgs0,'\n', gib0 )
+
+with open('sonuç.txt', 'a') as f:
+    f.write(sgk0 + '\n')
+    f.write(davalarim0 + '\n')
+    f.write(sgko0 + '\n')
+    f.write(BTK0 + '\n')
+    f.write(tvkgs0 + '\n')
+    f.write(gib0 + '\n') # Her sonuç bilgisinin yeni bir satıra yazılmasını sağlar
+
+    
 browser.close()
+
